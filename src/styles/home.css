@@ -1,0 +1,17 @@
+#notification-toggle-btn {
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#notification-toggle-btn.subscribed {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    color: white;
+}
+
+#notification-toggle-btn:disabled {
+    opacity: 0.7;
+    cursor: wait;
+}

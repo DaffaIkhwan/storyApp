@@ -1,0 +1,95 @@
+.image-modal {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(33, 37, 41, 0.85);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10010;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s var(--transition-timing), visibility 0s linear 0.25s;
+    padding: var(--spacing-lg);
+    cursor: zoom-out;
+  }
+  
+  .image-modal[aria-hidden="false"] {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0s;
+  }
+  
+  .image-modal__image {
+    display: block;
+    max-width: calc(100vw - var(--spacing-xl) * 2);
+    max-height: calc(80vh - var(--spacing-lg));
+    object-fit: contain;
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-xl);
+    transform: scale(0.95);
+    opacity: 0;
+    transition: transform 0.25s var(--transition-timing) 0.05s, opacity 0.25s var(--transition-timing) 0.05s;
+    cursor: default;
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .image-modal[aria-hidden="false"] .image-modal__image {
+      transform: scale(1);
+      opacity: 1;
+  }
+  
+  
+  .image-modal__close {
+    position: absolute;
+    top: var(--spacing-lg);
+    right: var(--spacing-lg);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    font-size: 1.6rem;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color var(--transition-duration) var(--transition-timing), transform var(--transition-duration) var(--transition-timing), color var(--transition-duration) var(--transition-timing);
+    z-index: 1;
+  }
+  
+  .image-modal__close:hover,
+  .image-modal__close:focus-visible {
+    background-color: rgba(0, 0, 0, 0.7);
+    transform: scale(1.1);
+    outline: none;
+    color: var(--white-color);
+  }
+  
+  .image-modal__caption {
+      color: #DEE2E6;
+      padding: var(--spacing-sm) var(--spacing-md);
+      border-radius: var(--border-radius-md);
+      font-size: 0.9rem;
+      text-align: center;
+      max-width: 70%;
+      opacity: 0;
+      transition: opacity 0.3s ease 0.1s;
+      background-color: rgba(33, 37, 41, 0.8);
+      cursor: default;
+      margin-top: auto;
+      transform: translateY(-var(--spacing-sm));
+      font-weight: var(--font-weight-normal);
+  }
+  
+  .image-modal[aria-hidden="false"] .image-modal__caption {
+      opacity: 1;
+  }
+  
+  .image-modal__image,
+  .image-modal__caption {
+      pointer-events: auto;
+      cursor: default;
+  }

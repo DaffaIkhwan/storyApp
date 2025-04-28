@@ -1,0 +1,3 @@
+APP_URL=https://story-app-zs2w.vercel.app/
+
+MAP_SERVICE_API_KEY=ycYnjQnQjaybWkdGWhCZ
